@@ -1,0 +1,68 @@
+---
+// Example of importing marquee announcements from JSON files at build time
+const marqueeFiles = import.meta.glob('/src/content/marquee/*.json', { eager: true });
+
+// Convert the imported modules into an array of announcements
+const marquees = Object.values(marqueeFiles).map(module => module.default);
+
+const currentDate = new Date();
+
+// Filter marquees based on the current date
+const activeMarquees = marquees.filter(marquee => {
+  const startDate = marquee.startDate ? new Date(marquee.startDate) : null;
+  const endDate = marquee.endDate ? new Date(marquee.endDate) : null;
+  return (!startDate || startDate <= currentDate) && (!endDate || endDate >= currentDate);
+});
+
+// Logging for debugging
+console.log("Active Marquees:", activeMarquees);
+
+export interface Props {
+  id?: string;
+  isSticky?: boolean;
+  position?: string;
+}
+
+const { id = 'announcement', isSticky = true } = Astro.props;
+---
+
+<style>
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
+  .marquee-content {
+    display: block;
+    width: max-content;
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 80s linear infinite;
+    padding-left: 80px; /* Adjust this padding to ensure the marquee text starts after the logo */
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class={isSticky ? 'mb-[-1rem] z-30 marquee h-10 bg-dark flex items-center relative' : ''} id={id}>
+  <span class="marquee-content text-primary">
+    {
+      activeMarquees.map((marquee, index) => (
+        <Fragment key={index}>
+          {marquee.message}
+          {index < activeMarquees.length - 1 && <span class="mx-[400px]" />}
+        </Fragment>
+      ))
+    }
+  </span>
+</div>

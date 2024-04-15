@@ -1,0 +1,111 @@
+site:
+  name: Industrial Engineering Department
+  site: 'https://astrowind.vercel.app'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: AbFP5v0E8seYs9m5gJcTPOZOhjY0oikMpBzHYJ12qJM
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Industrial Engineering Department
+    template: '%s — AstroWind'
+  description: "\U0001F680 The Industrial Engineering Department at the Technological Institute of the Philippines (TIP IE Department) stands at the forefront of nurturing leadership and innovation in the field of Industrial Engineering. Our department is committed to excellence in teaching, bolstered by a curriculum that encompasses the latest advancements and methodologies in Industrial Engineering. We pride ourselves on a culture of innovation and research, aiming to solve real-world problems and advance the field. Our strong collaboration with industry partners enriches our programs, offering students invaluable real-world experience and enhancing job opportunities after graduation. Our department is an ideal environment for students aspiring to become leaders in engineering, providing them with the knowledge, skills, and opportunities to excel."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Industrial Engineering Department
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@TIP1962official'
+    site: '@TIP1962official'
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: G-7PLBTNB250
+
+ui:
+  theme: 'system'
+  tokens: 
+    default:
+      fonts:
+        sans: "'Nunito', sans-serif"
+        serif: "'Literata', serif"
+        heading: "'Poppins', sans-serif"
+      colors:
+        default: rgb(16 16 16)
+        heading: rgb(0 0 0)
+        muted: rgb(16 16 16 / 66%) 
+        bgPage: rgb(255 255 255)
+        primary: rgb(252 226 5)
+        secondary: rgb(33 54 99)
+        accent: rgb(196 145 2)
+        info: rgb(119 182 234)
+        success: rgb(54 211 153) 
+        warning: rgb(251 189 35)
+        error: rgb(248 114 114)
+        link: rgb(252 226 5)
+        linkActive: var(--aw-color-secondary)
+    dark: 
+      fonts:
+        sans: "'Nunito', sans-serif"
+        serif: "'Literata', serif"
+        heading: "'Poppins', sans-serif"
+      colors:
+        default: rgb(229 236 246)
+        heading: rgb(229 236 246)
+        muted: rgb(229 236 246 / 66%)
+        bgPage: rgb(3 6 32)
+        primary: rgb(252 226 5)
+        secondary: rgb(33 54 99)
+        accent: rgb(196 145 2)
+        info: rgb(58 191 248)
+        success: rgb(54 211 153)
+        warning: rgb(251 189 35)
+        error: rgb(248 114 114)
+        link: rgb(252 226 5)
+        linkActive: var(--aw-color-secondary)

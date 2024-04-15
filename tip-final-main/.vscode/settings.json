@@ -1,0 +1,49 @@
+{
+  "css.customData": ["./vscode.tailwind.json"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "yaml.schemas": {
+    "./.vscode/astrowind/config-schema.json": "/src/config.yaml"
+  },
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "javascript",
+    "astro",
+    "tailwind",
+  ],
+  "spellright.parserByClass": {
+    "astro": {
+      "parser": "markdown"
+    }
+  },
+  "liveServer.settings.port": 5501,
+  "cSpell.words": [
+    "astro"
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:tipiedev}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+  "explorer.copyRelativePathSeparator": "/"
+}
